@@ -1,0 +1,58 @@
+.audio-btn {
+    position: absolute;
+    z-index: 3;
+    right: 50%;
+    bottom: -64%;
+    transform: translate(50%, -50%) scale(1);
+    width: clamp(40px, 4vw, 70px);
+    height: clamp(40px, 4vw, 70px);
+    cursor: pointer;
+    &__play {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation-name: audio-btn;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in;
+
+    }
+    &__stop {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+    }
+    img {
+        height: 100%;
+        width: 100%;
+
+    }
+}
+
+@keyframes audio-btn {
+    from {
+        opacity: .9;
+        scale: 1;
+    }
+    to {
+        opacity: .2;
+        scale: .9;
+    }
+}
+
+
+.btn-hidden {
+    display: none;
+}
+
+@media (max-height:1000px) and (min-width:768px) {
+    .audio-btn {
+        right: -35%;
+        top: -15%;
+    }
+}

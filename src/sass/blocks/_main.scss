@@ -1,0 +1,135 @@
+.main {
+    height: 100vh;
+    height: 100svh;
+    min-height: 600px;
+    background-position: 49% 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &__wrapper {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        width: 35vw;
+        min-width: 200px;
+        max-width: 450px;
+        background: url('../../img/main-bg.jpg') no-repeat 50%/cover;
+        background-position: 0 0;
+        top: 52.5%;
+        left: 50%;
+        translate: -50% -50%;
+        border-radius: 50%;
+        overflow: visible;
+        color: $brown-color;
+        &::after {
+            content: '';
+            position: absolute;
+            aspect-ratio: 1 / 1;
+            width: 152%;
+            top: 46%;
+            left: 50%;
+            translate: -50% -50%;
+            background: url('../../img/flowers-border-4.svg') no-repeat 50%/cover;
+            overflow: hidden;
+            transform: scaleX(-1);
+        }
+    }
+    &__date {
+        position: absolute;
+        z-index: 3;
+        left: 2%;
+        bottom: 2%;
+        rotate: 45deg;
+        font-size: clamp(20px, 3vw, 46px);
+        width: 10px;
+        height: auto;
+        overflow: visible;
+        text-align: center;
+        text-wrap: nowrap;
+        display: flex;
+        justify-content: center;
+    }
+    &__name {
+        position: absolute;
+        z-index: 3;
+        right: 3%;
+        top: -3%;
+        rotate: 45deg;
+        font-size: clamp(20px, 3vw, 46px);
+        width: 10px;
+        height: auto;
+        overflow: visible;
+        text-align: center;
+        text-wrap: nowrap;
+        display: flex;
+        justify-content: center;
+    }
+    &__music {
+        position: absolute;
+        z-index: 3;
+        left: 50%;
+        translate: -50%;
+        bottom: -80%;
+        font-size: clamp(16px, 2.5vw, 22px);
+        width: max-content;
+        height: max-content;
+        opacity: .8;
+        text-align: center;
+    }
+    &__topside-img {
+        position: absolute;
+        aspect-ratio: 2/1.1;
+        width: 60%;
+        top: 3%;
+        left: 50%;
+        translate: -50%;
+        opacity: .7;
+        background: url('../../img/nameWithDate-in-wreath.svg') no-repeat 50%/cover;
+        &-date {
+            display: none;
+            background: url('../../img/date-without-wreath.svg') no-repeat 50%/cover;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .main {
+        &__topside-img {
+            position: absolute;
+            aspect-ratio: 2/1.1;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            opacity: .7;
+            background: url('../../img/empty-in-wreath.svg') no-repeat 50%/contain;
+        } 
+    }
+}
+@media (min-height:1000px) and (min-width:768px) and (max-width:1024px) {
+    .main {
+        &__topside-img {
+            &-date {
+                display: block;
+                position: absolute;
+                aspect-ratio: 1/1.1;
+                width: 30%;
+                top: 3%;
+                left: 50%;
+                translate: -50%;
+                opacity: .7;
+            }
+        } 
+    }
+}
+@media (max-height:1000px) and (min-width:768px) {
+    .main {
+        &__music {
+            left: 120%;
+            translate: 0;
+            bottom: 90%;
+            color: #000;
+        }
+    }
+}
