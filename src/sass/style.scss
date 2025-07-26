@@ -40,10 +40,13 @@ body {
     &__wrapper {
         display: block;
         position: fixed;
-        width: 100vw;
-        height: 100vh;
-        background: url('../img/bg-textile-beige-horizont.svg') no-repeat 50%/cover;
+        width: 100px;
+        height: 100px;
+        background: url('../../img/bg-textile-beige-horizont.svg') no-repeat 50%/cover;
         z-index: -10;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
         &::after {
             content: "";
             position: absolute;
