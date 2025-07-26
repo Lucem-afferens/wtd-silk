@@ -54,17 +54,18 @@
     &__name {
         position: absolute;
         z-index: 3;
-        right: 3%;
-        top: -3%;
+        right: -3%;
+        top: 3%;
         rotate: 45deg;
         font-size: clamp(20px, 3vw, 46px);
-        width: 10px;
-        height: auto;
+        width: 30px;
+        height: max-content;
         overflow: visible;
         text-align: center;
         text-wrap: nowrap;
         display: flex;
         justify-content: center;
+
     }
     &__music {
         position: absolute;
