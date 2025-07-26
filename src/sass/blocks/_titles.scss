@@ -38,6 +38,7 @@
         text-wrap: pretty; 
         transform: translateY(20px);
         font-size: clamp(30px, 4vw, 48px);
+        text-shadow: none;
     }
     &_calendar {
         color: $gold-color;
