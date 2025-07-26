@@ -36,7 +36,8 @@
         }
     }
     &__date {
-        position: absolute;
+        display: block;
+        position: fixed;
         z-index: 3;
         left: 2%;
         bottom: 2%;
