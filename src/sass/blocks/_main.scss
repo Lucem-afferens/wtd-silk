@@ -108,6 +108,16 @@
         } 
     }
 }
+
+@media (max-width:768px) {
+    .main {
+        &__wrapper {
+            &::after {
+                background: url('../img/flowers-border-4-mini.svg') no-repeat 50%/cover;
+            }
+        }
+    }
+}
 @media (min-height:1000px) and (min-width:768px) and (max-width:1024px) {
     .main {
         &__topside-img {
