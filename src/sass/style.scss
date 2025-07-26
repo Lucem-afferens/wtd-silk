@@ -41,8 +41,7 @@ body {
         position: fixed;
         width: 100vw;
         height: 100vh;
-        height: 100svh;
-        background: url('../../img/bg-textile-beige-horizont.svg') no-repeat 50%/cover fixed;
+        background: url('../img/bg-textile-beige-horizont.svg') no-repeat 50%/cover fixed;
         &::after {
             content: "";
             position: absolute;
