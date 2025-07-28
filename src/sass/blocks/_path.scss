@@ -1,16 +1,37 @@
 .path {
     padding-top: 80px;
     min-height: 500px;
+  
     &__wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 60px;  
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 60px;
+      align-items: center;
     }
+  
     &__map {
-        margin: 0 auto;
-        margin-top: 40px;
-        max-width: 780px;
+      margin: 0 auto;
+      margin-top: 40px;
+      max-width: 780px;
     }
-}
+  }
+  
+  .map-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+  }
+  
+  .map-overlay {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
