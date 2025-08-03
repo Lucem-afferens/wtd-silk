@@ -30,7 +30,7 @@
             top: 46%;
             left: 50%;
             translate: -50% -50%;
-            background: url('../img/flowers-border-4.svg') no-repeat 50%/contain;
+            background: url('../img/flowers_border_4.webp') no-repeat 50%/contain;
             overflow: hidden;
         }
     }
@@ -113,7 +113,7 @@
     .main {
         &__wrapper {
             &::after {
-                background: url('../img/flowers-border-4.svg') no-repeat 50%/cover;
+                background: url('../img/flowers_border_4.webp') no-repeat 50%/cover;
             }
         }
     }
