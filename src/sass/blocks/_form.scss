@@ -86,16 +86,6 @@ form {
         box-shadow: 0px 0px 10px #c0c0c0;
         background: rgba(#a08143, .5);
         transition: all 500ms ease;
-        &:active {
-            transform: scale(.9);
-            background: rgba(#ac3b61, .3);
-            color: #333;
-        }
-        &__touch {
-            transform: scale(.9);
-            background: rgba(#ac3b61, .3);
-            color: #333;
-        }
     }
 
 }

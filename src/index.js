@@ -145,42 +145,66 @@ document.addEventListener('click', function(event) {
 
 
 
-  // Ниже - отправка формы с обраоткой на стороне серврера через send.php
-document.querySelector("form").addEventListener("submit", function(e) {
-    e.preventDefault();
+ // Ниже - отправка формы с обраоткой на стороне серврера через send.php
+ document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const submitBtn = form.querySelector("button[type='submit']");
+  const toast = document.getElementById("form-toast");
+  const formData = new FormData(form);
+
+  // Блокируем кнопку и меняем текст на "Отправка..."
+  submitBtn.disabled = true;
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = "Отправка...";
+
+  // --- ВАРИАНТ 1: РЕАЛЬНАЯ ОТПРАВКА НА СЕРВЕР send.php ---
+  // fetch("send.php", {
+  //   method: "POST",
+  //   body: formData
+  // })
+  // .then(response => response.json())
+  // .then(data => {
+  //   toast.textContent = data.message;
+  //   toast.className = "toast show " + (data.success ? "success" : "error");
+
+  //   if (data.success) {
+  //     form.reset();
+  //   }
+
+  //   setTimeout(() => {
+  //     toast.className = "toast"; // скрыть сообщение
+  //   }, 8000);
+  // })
+  // .catch(() => {
+  //   toast.textContent = "Сервер недоступен. Попробуйте позже.";
+  //   toast.className = "toast show error";
+  //   setTimeout(() => {
+  //     toast.className = "toast";
+  //   }, 4000);
+  // })
+  // .finally(() => {
+  //   submitBtn.disabled = false;
+  //   submitBtn.textContent = originalText;
+  // });
+
   
-    const form = e.target;
-    const formData = new FormData(form);
+  // --- ВАРИАНТ 2: ШАБЛОННАЯ ОТПРАВКА (для демонстрации без PHP) ---
+  setTimeout(() => {
+    toast.textContent = "Спасибо! Ваш ответ получен!";
+    toast.className = "toast show success";
+    form.reset();
+
+    setTimeout(() => {
+      toast.className = "toast"; // скрыть сообщение
+    }, 8000);
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText;
+  }, 1500);
   
-    fetch("send.php", {
-      method: "POST",
-      body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-      const toast = document.getElementById("form-toast");
-      toast.textContent = data.message;
-      toast.className = "toast show " + (data.success ? "success" : "error");
-  
-      if (data.success) {
-        form.reset();
-      }
-  
-      setTimeout(() => {
-        toast.className = "toast"; // скрыть сообщение
-      }, 8000);
-    })
-    .catch(() => {
-      const toast = document.getElementById("form-toast");
-    //   toast.textContent = "Сервер недоступен. Попробуйте позже.";
-      toast.textContent = "Спасибо! Ваш ответ получен!";  // Вместо сообщения об ошибке - показ сообщения об успехе (исключительно для публикации как примера работ, без хостинга (форма не отсылает к файлу send.php)). При продакшн запустить вместо этой строку выше
-      toast.className = "toast show error";
-  
-      setTimeout(() => {
-        toast.className = "toast";
-      }, 4000);
-    });
-  });
+});
 
   
  //активация карты по клику на нее
